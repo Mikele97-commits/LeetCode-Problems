@@ -1,4 +1,4 @@
-package Largets_3_Same_Digit_Number_In_String;
+package Largest_3_Same_Digit_Number_In_String;
 
 import java.util.Scanner;
 
