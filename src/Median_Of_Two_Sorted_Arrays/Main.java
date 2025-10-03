@@ -52,20 +52,14 @@ public class Main {
             System.out.print(nums3[i]+" ");
         }
 
-    boolean isEven;
-        if (n3%2>0)
-            isEven=false;
-        else
-            isEven=true;
+
         double Median;
-    if (isEven){
-        Median= (double) (nums3[n3 / 2] + nums3[(n3 / 2) - 1]) /2;
+    if (n3%2>0){
+        Median=nums3[(n3 / 2)];
     }
     else{
-        Median=nums3[(n3 / 2)+1];
+        Median= (double) (nums3[n3 / 2] + nums3[(n3 / 2) - 1]) /2;
     }
-
         System.out.println("Median is "+Median);
-
     }
 }
