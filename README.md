@@ -21,7 +21,7 @@ README generated with Claude, as this way it looks way better than if i did that
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/description/) | HashMap — store complement at each step | O(n) | O(n) |
 | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/) | Binary search on partition | O(log(n+m)) | O(1) |
 
-### Linked Lists
+### Lists
 
 | # | Problem | Approach | Time | Space |
 |---|---------|----------|------|-------|
