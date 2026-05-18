@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class StringExercises {
@@ -121,5 +122,65 @@ public class StringExercises {
             }
         }
         return longest;
+    }
+
+    public static String zigzag(String s, int numRows) {
+
+        if (numRows == 1) {
+            return s;
+        }
+        if (s.length() == 1|| s.length()==2) {
+            return s;
+        }
+
+
+
+        if(s.length()<=numRows){
+            return s;
+        }
+        Character[][] matrix = new Character[numRows][s.length()];
+
+
+        int counter = 0;
+        int row = 0;
+        int col = 0;
+        boolean switchDirection=false;
+        while(counter<s.length()){
+            if(!switchDirection){
+                matrix[row][col] = s.charAt(counter);
+                counter++;
+                if(row+1==numRows){
+                    switchDirection=true;
+                }else {
+                    row++;
+                }
+            }
+
+            if (switchDirection) {
+                if(counter==s.length()){
+                    break;
+                }
+                row--;
+                col++;
+                matrix[row][col] = s.charAt(counter);
+
+                counter++;
+                if (row==0){
+                    row++;
+                    switchDirection=false;
+                }
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<numRows; i++){
+            for(int j=0; j<matrix[i].length; j++){
+                if(matrix[i][j]!=null){
+                    sb.append(matrix[i][j]);
+                }
+            }
+        }
+        String zigzag = sb.toString();
+        return zigzag;
     }
 }

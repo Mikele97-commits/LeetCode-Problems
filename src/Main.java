@@ -30,5 +30,8 @@ public class Main {
         //Exercise 5. Longest Palindromic Substring. https://leetcode.com/problems/longest-palindromic-substring/description/
         //System.out.println(StringExercises.longestPalindrome("abb"));
 
+        //Exercise 6. Zigzag conversion. https://leetcode.com/problems/zigzag-conversion/
+        //System.out.println(StringExercises.zigzag("ABCD", 2));
+
     }
 }
