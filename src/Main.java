@@ -18,6 +18,8 @@ public class Main {
             sum = sum.next;
         }*/
 
+        //Exercise 3. Longest Substring Without Repeating Characters. https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+        //System.out.println(StringExercises.lengthOfLongestSubstring("abcabcbb"));
 
         //Exercise 4. Median of Two Sorted Arrays. https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 
@@ -25,6 +27,8 @@ public class Main {
         int[] nums2= {2,3,4};
         System.out.println(ArrayExercises.findMedianSortedArrays(nums1,nums2));*/
 
+        //Exercise 5. Longest Palindromic Substring. https://leetcode.com/problems/longest-palindromic-substring/description/
+        //System.out.println(StringExercises.longestPalindrome("abb"));
 
     }
 }
