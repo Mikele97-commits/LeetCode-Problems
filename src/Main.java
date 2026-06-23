@@ -33,5 +33,15 @@ public class Main {
         //Exercise 6. Zigzag conversion. https://leetcode.com/problems/zigzag-conversion/
         //System.out.println(StringExercises.zigzag("ABCD", 2));
 
+        //Exercise 7. Reverse integer. https://leetcode.com/problems/reverse-integer/description/
+        //System.out.println(IntExercises.reverse(1534236469));
+
+        //Exercise 8. String to integer. https://leetcode.com/problems/string-to-integer-atoi/
+        //System.out.println(IntExercises.myAtoi("-91283472332"));
+
+        //Exercise 9. Palindrome number
+        //System.out.println(IntExercises.isPalindrome(24325));
+        //System.out.println(IntExercises.isPalindrome(53135));
+
     }
 }
