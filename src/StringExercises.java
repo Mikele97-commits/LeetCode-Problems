@@ -186,6 +186,26 @@ public class StringExercises {
         return zigzag;
     }
 
+    public static String longestCommonPrefix(String[] strs) {
+        int shortestLength = strs[0].length();
+        for (int i = 1; i < strs.length; i++) {
+            if (strs[i].length() < shortestLength) {
+                shortestLength = strs[i].length();
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < shortestLength; i++) {
+            for(int j = 1; j < strs.length; j++) {
+                if (strs[0].charAt(i) != strs[j].charAt(i)) {
+                    return sb.toString();
+                }
+            }
+            sb.append(strs[0].charAt(i));
+        }
+
+        return sb.toString();
+    }
+
 
 
 }

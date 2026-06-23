@@ -102,4 +102,21 @@ public class ArrayExercises {
                 }
             }
     }
+
+    public static int maxArea(int[] height) {
+        int pointer1=0,pointer2=height.length-1;
+        int maxArea=(pointer2-pointer1)*(Math.min(height[pointer1], height[pointer2]));
+        while(pointer1<pointer2){
+            if(height[pointer1]<height[pointer2]){
+                pointer1++;
+            }else{
+                pointer2--;
+            }
+            int newArea=(pointer2-pointer1)*(Math.min(height[pointer1], height[pointer2]));
+            if(maxArea<newArea){
+                maxArea=newArea;
+            }
+        }
+        return maxArea;
+    }
 }

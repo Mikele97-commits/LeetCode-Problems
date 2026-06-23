@@ -1,5 +1,7 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class IntExercises {
     public static int reverse(int x) {
@@ -122,5 +124,123 @@ public class IntExercises {
         }
 
         return true;
+    }
+
+    public static String intToRoman (int num){
+        int thousands=num/1000;
+        int hundreds=(num-thousands*1000)/100;
+        int tens=(num-thousands*1000-hundreds*100)/10;
+        int ones=num%10;
+        System.out.println(thousands+ " "+hundreds+ " "+tens+ " "+ones);
+        StringBuilder sb = new StringBuilder();
+        sb.append("M".repeat(Math.max(0, thousands)));
+        switch(hundreds){
+            case 1:
+            case 2:
+            case 3:
+            {
+                sb.append("C".repeat(hundreds));
+            }
+            break;
+            case 4:
+                sb.append("CD");
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                sb.append("D");
+                sb.append("C".repeat(hundreds - 5));
+                break;
+            case 9:
+                sb.append("CM");
+        }
+        switch(tens){
+            case 1:
+            case 2:
+            case 3:
+            {
+                sb.append("X".repeat(tens));
+            }
+            break;
+            case 4:
+                sb.append("XL");
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                sb.append("L");
+                sb.append("X".repeat(tens - 5));
+                break;
+            case 9:
+                sb.append("XC");
+        }
+        switch(ones){
+            case 1:
+            case 2:
+            case 3:
+            {
+                sb.append("I".repeat(ones));
+            }
+            break;
+            case 4:
+                sb.append("IV");
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                sb.append("V");
+                sb.append("I".repeat(ones - 5));
+                break;
+            case 9:
+                sb.append("IX");
+        }
+
+        return sb.toString();
+    }
+
+    public static int romanToInt(String s) {
+        List<Integer> numbers = new ArrayList<Integer>();
+        for (int i = 0; i < s.length(); i++) {
+            switch (s.charAt(i)) {
+                case 'I':
+                    numbers.add(1);
+                    break;
+                case 'V':
+                    numbers.add(5);
+                    break;
+                case 'X':
+                    numbers.add(10);
+                    break;
+                case 'L':
+                    numbers.add(50);
+                    break;
+                case 'C':
+                    numbers.add(100);
+                    break;
+                case 'D':
+                    numbers.add(500);
+                    break;
+                case 'M':
+                    numbers.add(1000);
+                    break;
+            }
+        }
+        int answer = 0;
+        for (int i = 0; i < numbers.size(); i++) {
+            if(i<numbers.size()-1){
+                if(numbers.get(i)<numbers.get(i+1)){
+                    answer += numbers.get(i+1)-numbers.get(i);
+                    i++;
+                    continue;
+                }
+                answer+=numbers.get(i);
+                continue;
+            }
+            answer += numbers.get(i);
+        }
+        return answer;
     }
 }

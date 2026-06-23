@@ -39,9 +39,21 @@ public class Main {
         //Exercise 8. String to integer. https://leetcode.com/problems/string-to-integer-atoi/
         //System.out.println(IntExercises.myAtoi("-91283472332"));
 
-        //Exercise 9. Palindrome number
+        //Exercise 9. Palindrome number. https://leetcode.com/problems/palindrome-number/
         //System.out.println(IntExercises.isPalindrome(24325));
         //System.out.println(IntExercises.isPalindrome(53135));
+
+        //Exercise 11. Container with most water. https://leetcode.com/problems/container-with-most-water
+        //System.out.println(ArrayExercises.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+
+        //Exercise 12. Int to roman. https://leetcode.com/problems/integer-to-roman
+        //System.out.println(IntExercises.intToRoman(3456));
+
+        //Exercise 13. Roman to Int. https://leetcode.com/problems/roman-to-integer/
+        //System.out.println(IntExercises.romanToInt("MCMXCIV"));
+
+        //Exercise 14. Longest common prefix. https://leetcode.com/problems/longest-common-prefix
+        //System.out.println(StringExercises.longestCommonPrefix(new String[]{"flower","flow","flight"}));
 
     }
 }
