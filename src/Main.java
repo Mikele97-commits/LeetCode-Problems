@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -64,5 +65,9 @@ public class Main {
 
         //Exercise 17. Letter Combinations of a Phone Number. https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
         //System.out.println(StringExercises.letterCombinations("2"));
+
+        //Exercise 19. Remove Nth Node From End of List. https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+        //ListExercises.ListNode l1 = new ListExercises.ListNode(2, new ListExercises.ListNode(4, new ListExercises.ListNode(3)));
+        //System.out.println(ListExercises.removeNthFromEnd(l1,2));
     }
 }

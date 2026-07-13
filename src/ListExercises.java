@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListExercises {
 
     public static class ListNode {
@@ -66,5 +69,22 @@ public class ListExercises {
             }
         }
         return start;
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        int counter = 1;
+        List<Integer> list = new ArrayList<>();
+        list.add(head.val);
+        while (head.next != null) {
+            head = head.next;
+            list.add(head.val);
+            counter++;
+        }
+        list.remove(list.size()-n);
+        ListNode newHead=null;
+        for (int i = list.size(); i > 0; i--) {
+            newHead = new ListNode(list.get(i-1),newHead);
+        }
+        return newHead;
     }
 }
