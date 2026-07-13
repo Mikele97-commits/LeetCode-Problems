@@ -62,6 +62,7 @@ public class Main {
         //Exercise 16. Three sum closest. https://leetcode.com/problems/3sum-closest/description/
         //System.out.println(ArrayExercises.threeSumClosest(new int[]{2,3,8,9,10},16));
 
-
+        //Exercise 17. Letter Combinations of a Phone Number. https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+        //System.out.println(StringExercises.letterCombinations("2"));
     }
 }
