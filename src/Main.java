@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -54,6 +55,13 @@ public class Main {
 
         //Exercise 14. Longest common prefix. https://leetcode.com/problems/longest-common-prefix
         //System.out.println(StringExercises.longestCommonPrefix(new String[]{"flower","flow","flight"}));
+
+        //Exercise 15. Three sum. https://leetcode.com/problems/3sum/description/
+        //System.out.println(ArrayExercises.threeSum(new int[]{-1,0,1,2,-1,-4}));
+
+        //Exercise 16. Three sum closest. https://leetcode.com/problems/3sum-closest/description/
+        //System.out.println(ArrayExercises.threeSumClosest(new int[]{2,3,8,9,10},16));
+
 
     }
 }

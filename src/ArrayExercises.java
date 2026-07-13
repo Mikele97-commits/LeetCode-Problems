@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class ArrayExercises {
 
@@ -119,4 +118,74 @@ public class ArrayExercises {
         }
         return maxArea;
     }
+
+    public static List<List<Integer>> threeSum(int[] nums) {
+        HashSet<List<Integer>> tripletsSet = new HashSet<>();
+        List<List<Integer>> triplets=new ArrayList<>();
+        HashSet<Integer> integerSet=new HashSet<>();
+        for(int j=0;j<nums.length;j++){
+            integerSet.clear();
+            for (int i = 0; i < nums.length; i++){
+                if(i==j){
+                    continue;
+                }
+               if(integerSet.contains(-(nums[j]+nums[i]))){
+                   List<Integer> list=new ArrayList<>();
+                   list.add(nums[j]);
+                   list.add(nums[i]);
+                   list.add(-(nums[j]+nums[i]));
+                   list.sort(Integer::compareTo);
+                   if(!tripletsSet.contains(list)){
+                       tripletsSet.add(list);
+                       triplets.add(list);
+                   }
+                   while(i<nums.length-2&&nums[i]==nums[i+1]){
+                       i++;
+                   }
+               }
+               integerSet.add(nums[i]);
+            }
+        }
+        return triplets;
+    }
+
+    public static int threeSumClosest(int[] nums, int target) {
+        int p1=0, p2=1,p3=nums.length-1;
+        int smallest=Integer.MAX_VALUE;
+        int answer=0;
+        Arrays.sort(nums);
+        System.out.println(Arrays.toString(nums));
+        while(p1<=nums.length-3){
+            while(p2<p3){
+                System.out.println("p1+p2+p3="+(nums[p1]+nums[p2]+nums[p3]));
+
+              if(nums[p1]+nums[p2]+nums[p3]==target){
+                  System.out.println("Here");
+                  return target;
+              }
+              if(smallest>Math.abs(target-(nums[p1]+nums[p2]+nums[p3]))){
+                  System.out.println("smallest before="+smallest);
+                  smallest=Math.abs(target-(nums[p1]+nums[p2]+nums[p3]));
+                  System.out.println("smallest after="+smallest);
+                  answer=nums[p1]+nums[p2]+nums[p3];
+                  //System.out.println("current answer="+answer +" because nums[p1]:" + nums[p1] + " nums[p2]:"+ nums[p2] + " nums[p3]:"+nums[p3]);
+              }
+                if(nums[p1]+nums[p2]+nums[p3]<target){
+                    //System.out.println("get higher");
+                    p2++;
+                }
+                if(nums[p1]+nums[p2]+nums[p3]>target){
+                    //System.out.println("get lower");
+                    p3--;
+                }
+            }
+            p1++;
+            p2=p1+1;
+            p3=nums.length-1;
+            System.out.println("Going next step: p1="+p1+" p2="+p2+" p3="+p3);
+        }
+        return answer;
+    }
+
+
 }
