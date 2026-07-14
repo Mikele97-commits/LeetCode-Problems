@@ -69,5 +69,8 @@ public class Main {
         //Exercise 19. Remove Nth Node From End of List. https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
         //ListExercises.ListNode l1 = new ListExercises.ListNode(2, new ListExercises.ListNode(4, new ListExercises.ListNode(3)));
         //System.out.println(ListExercises.removeNthFromEnd(l1,2));
+
+        //Exercise 20. Valid Parentheses. https://leetcode.com/problems/valid-parentheses/description/
+        System.out.println(StringExercises.isValid("(){}}{"));
     }
 }

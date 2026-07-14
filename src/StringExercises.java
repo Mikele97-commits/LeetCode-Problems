@@ -1,7 +1,5 @@
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 public class StringExercises {
@@ -243,7 +241,6 @@ public class StringExercises {
         }
         return null;
     }
-
     public static List<String> lCOne(List<char[]> digits) {
         List<String> result = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -295,6 +292,28 @@ public class StringExercises {
             }
         }
         return result;
+    }
+
+    public static boolean isValid(String s) {
+        if(s.length()<2) return false;
+        char[] chars= s.toCharArray();
+        Map<Character, Character> pairs = new HashMap<>();
+        pairs.put('(', ')');
+        pairs.put('[', ']');
+        pairs.put('{', '}');
+        Stack<Character> openings = new Stack<>();
+        for (char aChar : chars) {
+            if (pairs.containsKey(aChar)) {
+                openings.push(aChar);
+            } else if (openings.isEmpty()) {
+                return false;
+            } else if (aChar == pairs.get(openings.peek())) {
+                openings.pop();
+            } else {
+                return false;
+            }
+        }
+        return openings.isEmpty();
     }
 
 }
