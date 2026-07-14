@@ -77,5 +77,8 @@ public class Main {
         //ListExercises.ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
         //ListExercises.ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
         //System.out.println(ListExercises.mergeTwoLists(list1,list2));
+
+        //Exercise 22. Generate Parentheses. https://leetcode.com/problems/generate-parentheses/
+        //System.out.println(StringExercises.generateParenthesis(4));
     }
 }
