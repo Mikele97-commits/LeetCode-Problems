@@ -71,6 +71,11 @@ public class Main {
         //System.out.println(ListExercises.removeNthFromEnd(l1,2));
 
         //Exercise 20. Valid Parentheses. https://leetcode.com/problems/valid-parentheses/description/
-        System.out.println(StringExercises.isValid("(){}}{"));
+        //System.out.println(StringExercises.isValid("(){}}{"));
+
+        //Exercise 21. Merge Two Sorted Lists. https://leetcode.com/problems/merge-two-sorted-lists/description/
+        //ListExercises.ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        //ListExercises.ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+        //System.out.println(ListExercises.mergeTwoLists(list1,list2));
     }
 }
