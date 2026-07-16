@@ -366,4 +366,34 @@ public class StringExercises {
             addNumber(numerical2, num, combinations);
         }
     }
+
+    public static String mergeAlternately(String word1, String word2) {
+        int minlength = Math.min(word1.length(), word2.length());
+        StringBuilder result = new StringBuilder();
+        for(int i=0;i<minlength;i++){
+            result.append(word1.charAt(i));
+            result.append(word2.charAt(i));
+        }
+        if(word1.length()<word2.length()){
+            result.append(word2, minlength, word2.length());
+        }
+        if(word1.length()>word2.length()){
+            result.append(word1, minlength, word1.length());
+        }
+        return result.toString();
+    }
+
+    public static String gcdOfStrings(String str1, String str2) {
+        String str3 = str1 + str2;
+        String str4 = str2 + str1;
+        if(!str4.equals(str3)){
+            return "";
+        }
+        return str3.substring(0,gcd(str1.length(),str2.length()));
+    }
+
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class ByID {
 
     public static void main(String[] args) {
         //Here will exist tests for every exercise with link to it
