@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class LeetCode75 {
     public static void main(String[] args) {
         //1768. Merge Strings Alternately. https://leetcode.com/problems/merge-strings-alternately/description/
@@ -11,5 +13,14 @@ public class LeetCode75 {
 
         //605. Can Place Flowers. https://leetcode.com/problems/can-place-flowers/description/
         //System.out.println(ArrayExercises.canPlaceFlowers(new int[]{0,1,0,1}, 1));
+
+        //345. Reverse Vowels of a String. https://leetcode.com/problems/reverse-vowels-of-a-string/description/
+        //System.out.println(StringExercises.reverseVowels("IceCreAm"));
+
+        //151. Reverse Words in a String. https://leetcode.com/problems/reverse-words-in-a-string/
+        //System.out.println(StringExercises.reverseWords("a good   example"));
+
+        //238. Product of Array Except Self. https://leetcode.com/problems/product-of-array-except-self/description/
+        //System.out.println(Arrays.toString(ArrayExercises.productExceptSelf(new int[]{1, 2, 3, 4})));
     }
 }

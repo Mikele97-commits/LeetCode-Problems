@@ -391,9 +391,59 @@ public class StringExercises {
         }
         return str3.substring(0,gcd(str1.length(),str2.length()));
     }
-
     public static int gcd(int a, int b) {
         if (b == 0) return a;
         return gcd(b, a % b);
+    }
+
+    public static String reverseVowels(String s) {
+        char[] charArray = s.toCharArray();
+        List<Character> vowels = new ArrayList<>();
+        List<Integer> indexes = new ArrayList<>();
+        Map<Integer,Character> consonantMap = new HashMap<>();
+        for (int i = 0; i < charArray.length; i++) {
+            if(charArray[i]=='a'||charArray[i]=='A'||charArray[i]=='e'||charArray[i]=='E'||charArray[i]=='i'||charArray[i]=='I'||charArray[i]=='o'||charArray[i]=='O'||charArray[i]=='u'||charArray[i]=='U') {
+                vowels.add(charArray[i]);
+                indexes.add(i);
+            }else{
+                consonantMap.put(i,charArray[i]);
+            }
+        }
+        Collections.reverse(indexes);
+        Map<Integer, Character> vowelsMap = new HashMap<>();
+        for(int i=0;i<vowels.size();i++){
+            vowelsMap.put(indexes.get(i),vowels.get(i));
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            if(consonantMap.containsKey(i)){
+                stringBuilder.append(consonantMap.get(i));
+            }else{
+                stringBuilder.append(vowelsMap.get(i));
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    public static String reverseWords(String s) {
+        List<String> words = new ArrayList<>();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)==' '||i==s.length()-1){
+                if(s.charAt(i)!=' '){
+                    stringBuilder.append(s.charAt(i));
+                }
+                if(!stringBuilder.isEmpty()){
+                    words.add(stringBuilder.toString());
+                    stringBuilder = new StringBuilder();
+                }
+                continue;
+            }
+            stringBuilder.append(s.charAt(i));
+        }
+        Collections.reverse(words);
+        return String.join(" ", words);
+
     }
 }
