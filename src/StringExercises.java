@@ -447,7 +447,6 @@ public class StringExercises {
 
     }
 
-    //It works as intended. In this case the exercise's description and check are busted
     public static int compress(char[] chars) {
         if(chars.length==1) return chars.length;
         int writingPointer=0;
@@ -493,6 +492,66 @@ public class StringExercises {
         }
 
         return writingPointer;
+    }
+
+    public static boolean isSubsequence(String s, String t) {
+
+        if(s.isEmpty()){
+            return true;
+        }
+        if(t.isEmpty()){
+            return false;
+        }
+        int pointerA=0;
+        int pointerB=0;
+        while(true){
+            if(s.charAt(pointerA)==t.charAt(pointerB)){
+                pointerA++;
+                pointerB++;
+            }else{
+                pointerB++;
+            }
+            if(pointerA==s.length()){
+                return true;
+            }
+            if(pointerB==t.length()){
+                return false;
+            }
+        }
+    }
+
+    public static int maxVowels(String s, int k) {
+        char[] arr = s.toCharArray();
+        int start = 0;
+        int end = k-1;
+        int biggest = 0;
+        int sum = 0;
+        boolean first;
+        first= arr[0] == 'a' || arr[0] == 'e' || arr[0] == 'i' || arr[0] == 'o' || arr[0] == 'u';
+        for (int i = 0; i <= end; i++) {
+            if(arr[i]=='a'||arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u'){
+                sum++;
+            }
+        }
+        biggest = sum;
+        start++;
+        end++;
+        while(end<s.length()){
+            if(first) sum--;
+            if(arr[end]=='a'||arr[end]=='e'||arr[end]=='i'||arr[end]=='o'||arr[end]=='u'){
+                sum++;
+            }
+            if(sum>biggest){
+                biggest=sum;
+            }
+            if(sum==k){
+                return k;
+            }
+            first= arr[start] == 'a' || arr[start] == 'e' || arr[start] == 'i' || arr[start] == 'o' || arr[start] == 'u';
+            start++;
+            end++;
+        }
+        return biggest;
     }
 
 }

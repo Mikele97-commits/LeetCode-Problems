@@ -283,5 +283,69 @@ public class ArrayExercises {
         return false;
     }
 
+    public static void moveZeroes(int[] nums) {
+        int zeroCounter=0;
+        List<Integer> list=new ArrayList<>();
+        for (int num : nums) {
+            if (num != 0) {
+                list.add(num);
+            } else {
+                zeroCounter++;
+            }
+        }
+        for(int i=0;i<list.size();i++){
+            nums[i]=list.get(i);
+        }
+        for(int i=list.size(); i<list.size()+zeroCounter; i++){
+            nums[i]=0;
+        }
 
+    }
+
+    public static int maxOperations(int[] nums, int k) {
+        Arrays.sort(nums);
+        int pointer1=0;
+        int pointer2=nums.length-1;
+        int pairs=0;
+        while(pointer1<pointer2){
+            if(nums[pointer1]+nums[pointer2]==k){
+                pairs++;
+                pointer1++;
+                pointer2--;
+            }
+            else if(nums[pointer1]+nums[pointer2]>k){
+                pointer2--;
+            }else{
+                pointer1++;
+            }
+
+        }
+        return pairs;
+    }
+
+    public static double findMaxAverage(int[] nums, int k) {
+        int start=0;
+        int end=k-1;
+        int biggest=Integer.MIN_VALUE;
+        int sum=0;
+        int first=0;
+        while(end<nums.length){
+            if(start==0){
+                first=nums[start];
+                for(int i=start;i<=end;i++){
+                    sum+=nums[i];
+                }
+            }else{
+                sum-=first;
+                sum+=nums[end];
+                first=nums[start];
+            }
+            if(sum>biggest){
+                biggest=sum;
+            }
+            start++;
+            end++;
+        }
+        return (double)biggest/(double)k;
+    }
 }

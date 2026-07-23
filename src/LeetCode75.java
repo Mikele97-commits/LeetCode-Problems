@@ -28,5 +28,27 @@ public class LeetCode75 {
 
         //443. String Compression. https://leetcode.com/problems/string-compression/description/
         //System.out.println(StringExercises.compress(new char[]{'a','a','b','b','c','c','c'}));
+
+        //283. Move Zeroes. https://leetcode.com/problems/move-zeroes/description/
+        /*int[] nums= {0,1,0,3,12};
+        ArrayExercises.moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));*/
+
+        //392. Is Subsequence. https://leetcode.com/problems/is-subsequence/description/
+        //System.out.println(StringExercises.isSubsequence("abc", "afdbvgbbqytrc"));
+
+        //11. Container with most water. https://leetcode.com/problems/container-with-most-water
+        //System.out.println(ArrayExercises.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+
+        //1679. Max Number of K-Sum Pairs. https://leetcode.com/problems/max-number-of-k-sum-pairs/description/
+        //System.out.println(ArrayExercises.maxOperations(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 13));
+
+        //643. Maximum Average Subarray I. https://leetcode.com/problems/maximum-average-subarray-i/description/
+        //System.out.println(ArrayExercises.findMaxAverage(new int[]{1,2,3,4,5}, 2));
+
+        //1456. Maximum Number of Vowels in a Substring of Given Length. https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
+        //System.out.println(StringExercises.maxVowels("aeiou",2));
     }
+
+
 }
