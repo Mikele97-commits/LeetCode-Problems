@@ -22,5 +22,11 @@ public class LeetCode75 {
 
         //238. Product of Array Except Self. https://leetcode.com/problems/product-of-array-except-self/description/
         //System.out.println(Arrays.toString(ArrayExercises.productExceptSelf(new int[]{1, 2, 3, 4})));
+
+        //334. Increasing Triplet Subsequence. https://leetcode.com/problems/increasing-triplet-subsequence/
+        //System.out.println(ArrayExercises.increasingTriplet(new int[]{1,2,3,4}));
+
+        //443. String Compression. https://leetcode.com/problems/string-compression/description/
+        //System.out.println(StringExercises.compress(new char[]{'a','a','b','b','c','c','c'}));
     }
 }

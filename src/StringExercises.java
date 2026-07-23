@@ -446,4 +446,53 @@ public class StringExercises {
         return String.join(" ", words);
 
     }
+
+    //It works as intended. In this case the exercise's description and check are busted
+    public static int compress(char[] chars) {
+        if(chars.length==1) return chars.length;
+        int writingPointer=0;
+        int readingPointer=0;
+        char current =' ';
+        int counter=1;
+        while(readingPointer<chars.length){
+            if(chars[readingPointer]==current){
+                counter++;
+            }else if(current!=' '){
+                char temp = chars[readingPointer];
+                chars[writingPointer]=current;
+                writingPointer++;
+                if(counter>1){
+                    String numbers = String.valueOf(counter);
+                    for(int i=0;i<numbers.length();i++){
+                        chars[writingPointer]=numbers.charAt(i);
+                        writingPointer++;
+                    }
+                }
+                current = temp;
+                counter=1;
+                chars[writingPointer]=current;
+                if(readingPointer==chars.length-1){
+                    writingPointer++;
+                }
+            }else{
+                current=chars[readingPointer];
+                counter=1;
+            }
+
+            readingPointer++;
+        }
+
+        if(counter>1){
+            chars[writingPointer]=current;
+            String numbers = String.valueOf(counter);
+            writingPointer++;
+            for(int i=0;i<numbers.length();i++){
+                chars[writingPointer]=numbers.charAt(i);
+                writingPointer++;
+            }
+        }
+
+        return writingPointer;
+    }
+
 }

@@ -265,5 +265,23 @@ public class ArrayExercises {
         return ans;
     }
 
+    public static boolean increasingTriplet(int[] nums) {
+        int smallest=nums[0];
+        int medium=Integer.MAX_VALUE;
+
+        for(int i=1;i<nums.length;i++){
+           if(nums[i]>medium){
+               return true;
+           }else if(nums[i]<medium&&nums[i]>smallest){
+               medium=nums[i];
+           }else if(nums[i]<smallest){
+               smallest=nums[i];
+           }
+        }
+
+
+        return false;
+    }
+
 
 }
