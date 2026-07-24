@@ -48,6 +48,16 @@ public class LeetCode75 {
 
         //1456. Maximum Number of Vowels in a Substring of Given Length. https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
         //System.out.println(StringExercises.maxVowels("aeiou",2));
+
+        //1004. Max Consecutive Ones III. https://leetcode.com/problems/max-consecutive-ones-iii/description/
+        //System.out.println(ArrayExercises.longestOnes(new int[]{0,0,1,1,1,0,0}, 0));
+
+
+        //1732. Find the Highest Altitude. https://leetcode.com/problems/find-the-highest-altitude/description/
+        //System.out.println(ArrayExercises.largestAltitude(new int[]{-4, -3, -2, -1, 4, 3, 2}));
+
+        //724. Find Pivot Index. https://leetcode.com/problems/find-pivot-index/description/
+        //System.out.println(ArrayExercises.pivotIndex(new int[] {1,7,3,6,5,6}));
     }
 
 

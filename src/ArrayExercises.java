@@ -348,4 +348,104 @@ public class ArrayExercises {
         }
         return (double)biggest/(double)k;
     }
+
+    public static int longestOnes(int[] nums, int k) {
+        int start = 0;
+        int end = 0;
+        int length = 0;
+        int zeroes=0;
+
+        if(k==0){
+            int sum=0;
+            while(end<nums.length){
+                if(nums[end]==1){
+                    sum++;
+                    System.out.println("adding sum, sum="+sum);
+                }
+                if(nums[end]==0){
+                   if(sum>length) length=sum;
+                   sum=0;
+                }
+                end++;
+            }
+            if(sum>length) length=sum;
+            return length;
+        }
+
+        while(end<nums.length){
+            if(nums[end]==0){
+                zeroes++;
+            }
+            if(zeroes>k){
+                while(zeroes>k) {
+                    start++;
+                    if (nums[start - 1] == 0) {
+                        zeroes--;
+                    }
+                    if(start>end) start=end;
+                }
+            }
+            if(end-start+1>length)length=end-start+1;
+            end++;
+        }
+
+        return length;
+    }
+
+    public static int longestSubarray(int[] nums) {
+        int k=1;
+        int start = 0;
+        int end = 0;
+        int length = 0;
+        int zeroes=0;
+
+        while(end<nums.length){
+            if(nums[end]==0){
+                zeroes++;
+            }
+            if(zeroes>k){
+                while(zeroes>k) {
+                    start++;
+                    if (nums[start - 1] == 0) {
+                        zeroes--;
+                    }
+                    if(start>end) start=end;
+                }
+            }
+            if(end-start+1>length)length=end-start+1;
+            end++;
+        }
+        return length;
+    }
+
+    public static int largestAltitude(int[] gain) {
+        int height=0;
+        int highest=Integer.MIN_VALUE;
+        for (int j : gain) {
+            height += j;
+            if (height > highest) {
+                highest = height;
+            }
+        }
+        return Math.max(highest, 0);
+    }
+
+    public static int pivotIndex(int[] nums) {
+        int sum=0;
+        int[] prefixSum=new int[nums.length];
+        for(int i=0;i<prefixSum.length;i++){
+            sum+=nums[i];
+            prefixSum[i]=sum;
+        }
+        System.out.println(Arrays.toString(prefixSum));
+        if(prefixSum[prefixSum.length-1]-prefixSum[0]==0){
+            return 0;
+        }
+        for(int i=1;i<prefixSum.length;i++){
+            if(prefixSum[i-1]==(prefixSum[prefixSum.length-1]-prefixSum[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
